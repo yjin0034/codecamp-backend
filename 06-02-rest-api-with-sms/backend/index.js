@@ -4,6 +4,7 @@ import swaggerUi from 'swagger-ui-express';
 import swaggerJsdoc from 'swagger-jsdoc';
 import { options } from './swagger/config.js';
 import cors from 'cors';
+import 'dotenv/config';
 
 const app = express();
 app.use(cors());
