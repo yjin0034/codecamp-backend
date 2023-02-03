@@ -1,4 +1,5 @@
 import coolsms from 'coolsms-node-sdk';
+import 'dotenv/config';
 
 export function checkValidationPhone(myphone) {
   // 1. 휴대폰 번호 자릿수 맞는지 확인하기
@@ -49,7 +50,7 @@ export async function sendTokenToSMS(myphone, token) {
 
   const result = messageService.sendOne({
     to: myphone,
-    from: 'SMS_SENDER',
+    from: SMS_SENDER,
     text: `[코드캠프] 안녕하세요?! 요청하신 인증번호는 [${token}] 입니다.`,
   });
 
