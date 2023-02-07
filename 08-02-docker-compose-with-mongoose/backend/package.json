@@ -1,5 +1,5 @@
 {
-  "name": "06-02-rest-api-with-sms",
+  "name": "08-02-docker-compose-with-mongoose",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",

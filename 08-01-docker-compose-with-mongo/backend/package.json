@@ -1,5 +1,5 @@
 {
-  "name": "06-02-rest-api-with-sms",
+  "name": "08-01-docker-compose-with-mongo",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",

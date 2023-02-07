@@ -15,6 +15,13 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerJsdoc(options)));
 
 // GET 요청이 들어왔을 때
 app.get('/boards', async (req, res) => {
+
+  console.log("aaa");
+  console.log("bbb");
+  console.log("ccc");
+  console.log("ddd");
+  console.log("eee");
+  
   // 1. 데이터를 조회하는 로직 => DB에 접속해서 데이터 꺼내오기
   // const result = [
   //   { number: 1, writer: '철수', title: '제목입니다~~', contents: '내용이에요@@@' },
@@ -77,7 +84,7 @@ app.post('/users', (req, res) => {
 });
 
 // 몽고 DB 접속!!
-await mongoose.connect('mongodb://my-database:27017/mydocker03');
+mongoose.connect('mongodb://my-database:27017/mydocker03');
 
 // Backend API 서버 오픈!!
 app.listen(3000, () => {
