@@ -1,0 +1,68 @@
+show databases;
+
+
+
+use myproject03;
+
+
+
+show tables;
+
+
+
+desc product;
+
+
+
+select * from product;
+
+
+
+insert into product(id, name, description, price, isSoldout) values(uuid(), '마우스', '좋은 마우스', 1000, false);
+
+insert into product(id, name, description, price, isSoldout) values(uuid(), '노트북', '최신 맥북!!', 20000, false);
+
+insert into product_saleslocation(id, address, addressDetail, lat, lng ,meetingTime) values(uuid(), '구로구', '구로디지털단지역', 0, 1, '2022-12-31');
+
+
+
+select id from product_saleslocation;
+
+select * from product;
+
+
+
+update product set description = '정말 좋은 마우스입니다!!!' where name = '키보드';
+
+update product set name = '키보드' where price = 1000;
+
+update product set productSaleslocationId = '399d9ca6-bd99-11ed-8827-b05cda30d167' where name = '키보드';
+
+
+
+select name, price, address, addressDetail from product p, product_saleslocation ps where p.productSaleslocationId = ps.id;
+
+select name, price, address, addressDetail as '상세주소' from product p, product_saleslocation ps where p.productSaleslocationId = ps.id;
+
+
+
+
+select name, price, isSoldout from product;
+
+select name, SUM(price) from product group by name;
+
+select name, MAX(price) from product group by name;
+
+
+
+
+select name, price, isSoldout from product;
+
+select name, price, isSoldout from product order by price asc;
+
+select name, price, isSoldout from product order by price desc;
+
+
+
+
+select name, price, isSoldout, (select max(price) from product) as maxPrice from product;
