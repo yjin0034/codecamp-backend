@@ -1,13 +1,15 @@
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
-import { TypeOrmModule } from '@nestjs/typeorm';
 import { Module } from '@nestjs/common';
 import { GraphQLModule } from '@nestjs/graphql';
+import { TypeOrmModule } from '@nestjs/typeorm';
 import { BoardModule } from './apis/boards/boards.module';
+import { ProductModule } from './apis/products/product.module';
 import { ProductCategoryModule } from './apis/productCategory/productCategory.module';
 
 @Module({
   imports: [
     BoardModule,
+    ProductModule,
     ProductCategoryModule,
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,

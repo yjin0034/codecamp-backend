@@ -1,5 +1,5 @@
 import { Args, Mutation, Resolver } from '@nestjs/graphql';
-import { ProductCategory } from './entites/productCategory.entity';
+import { ProductCategory } from './entities/productCategory.entity';
 import { ProductCategoryService } from './productCategory.service';
 
 @Resolver()
